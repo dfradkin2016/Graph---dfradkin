@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Vertex<E>
 {
 	private E value;
-	private ArrayList<Vertex> pointers;
+	private ArrayList<Vertex<E>> pointers;
 	private ArrayList<Integer> costs;
 	private boolean beenVisited;
 	
@@ -16,7 +16,7 @@ public class Vertex<E>
 	public Vertex(E v)
 	{
 		value = v;
-		pointers = new ArrayList<Vertex>();
+		pointers = new ArrayList<Vertex<E>>();
 		costs = new ArrayList<Integer>();
 		beenVisited = false;
 	}
@@ -38,11 +38,6 @@ public class Vertex<E>
 		costs.add(c);
 	}
 	
-	//public void traverse()
-	{
-		
-	}
-	
 	public E value()
 	{
 		return value;
@@ -53,7 +48,7 @@ public class Vertex<E>
 		value = v;
 	}
 	
-	public ArrayList<Vertex> pointers()
+	public ArrayList<Vertex<E>> pointers()
 	{
 		return pointers;
 	}
